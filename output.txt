@@ -1,0 +1,5 @@
+Results:
+Maximum Turnaround Time = 71
+Minimum Turnaround Time = 28
+Average = 45
+Standard Deviation = 8
