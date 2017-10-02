@@ -124,25 +124,6 @@ def circular_simulation(jobs, processors):
         current_time += 1
 
 
-def circ_b(jobs, processors):
-    j = 1
-    i = 1
-    processors[0].load_job(jobs[0], jobs[0].arrival_time)
-    jobs.remove(jobs[0])
-    current_time = processors[0].current_job.arrival_time
-    while not processors_empty(processors):
-        check_processors(current_time)
-        next_job = jobs[0]
-        current_time = next_job.arrival_time
-        if processors[j].is_empty:
-            processors[j].load_job(next_job, next_job.arrival_time)
-
-            j = (j+1) % k
-        else:
-            processors[j].wait_q.append(next_job)
-            j = (j+1) % k
-
-
 
 
 def shortest_remaining_time(jobs, processors):
@@ -169,7 +150,6 @@ for i in range(100):
     circular_simulation(pending_jobs, processors)
     times.append(turnaround_time(finished_jobs))
 
-print_output(times)
     
 
 
