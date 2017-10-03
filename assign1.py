@@ -60,13 +60,6 @@ def find_empty(processors):
             break
 
 
-def processors_empty(processors):
-    for p in processors:
-        if not p.is_empty:
-            return False
-            break
-    else: return True
-
 
 def check_processors(current_time):
     for p in processors:
